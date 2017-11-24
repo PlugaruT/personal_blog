@@ -1,0 +1,283 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %} Personal Blog {% endblock %}</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="{% static 'blog/css/milligram.css' %}">
+
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="column column-60">
+                    <nav class="menu">
+                        <ul>
+                            <li>
+                                <a href="{% url 'index' %}">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#">Archives</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="column column-40">
+                    <nav class="socials">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-pinterest"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-youtube"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- End of Header -->
+
+    <!-- Content -->
+
+    <div class="container">
+        {% block content %}
+
+        <!-- Hero -->
+        <div class="hero">
+            <a href="article.html" class="hero-link">
+                <img src="https://picsum.photos/1900/900?image=1011">
+                <div class="hero-meta">
+                    <p class="hero-category">
+                        Lifestyle
+                    </p>
+                    <h3 class="hero-title">Always remember</h3>
+                    <p class="hero-date">
+                        2 November, 2017
+                    </p>
+                </div>
+            </a>
+        </div>
+        <!-- End of Hero -->
+
+        <!-- Blog List -->
+        <div class="blog-list">
+            <div class="row">
+                <div class="column">
+                    <div class="article-preview">
+                        <img src="https://picsum.photos/600/600?image=1006">
+                        <p>Lifestyle</p>
+                        <h4>
+                            <a href="article.html">Never stop fighting</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="article-preview">
+                        <img src="https://picsum.photos/600/600?image=1008">
+                        <p>Motivation</p>
+                        <h4>
+                            <a href="article.html">Love yourself</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="article-preview">
+                        <img src="https://picsum.photos/600/600?image=999">
+                        <p>Lifestyle</p>
+                        <h4>
+                            <a href="article.html">Create your own style</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="article-preview">
+                        <img src="https://picsum.photos/600/600?image=1004">
+                        <p>Travel</p>
+                        <h4>
+                            <a href="article.html">The greatness of art</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="article-preview">
+                        <img src="https://picsum.photos/600/600?image=838">
+                        <p>Lifestyle</p>
+                        <h4>
+                            <a href="article.html">Family is a unique gift</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="article-preview">
+                        <img src="https://picsum.photos/600/600?image=882">
+                        <p>Motivation</p>
+                        <h4>
+                            <a href="article.html">I have a personal philosophy</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="article-preview">
+                        <img src="https://picsum.photos/600/600?image=1005">
+                        <p>Thoughts</p>
+                        <h4>
+                            <a href="article.html">The human race is a herd.</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="article-preview">
+                        <img src="https://picsum.photos/600/600?image=978">
+                        <p>Motivation</p>
+                        <h4>
+                            <a href="article.html">You are one of a kind</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Blog List -->
+
+        <!-- About -->
+        <div class="about">
+            <div class="row">
+                <div class="column column-50">
+                    <div class="about-image">
+                        <img src="https://picsum.photos/600/600?image=786">
+                    </div>
+                </div>
+                <div class="column column-50">
+                    <div class="about-wrapper">
+                        <h4>About me</h4>
+                        <p class="about-name">
+                            Loretta Sutton
+                        </p>
+                        <p class="about-description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nobis blanditiis iure. Libero reprehenderit quae et consectetur,
+                            expedita suscipit eos natus est repellendus ipsa recusandae, incidunt alias eum at sed iste ea!
+                            Maiores sint explicabo id, vero libero ab praesentium.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of About -->
+
+        {% endblock content %}
+    </div>
+
+    <!-- End of Content -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="column">
+                        <nav class="socials socials-footer">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-pinterest"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="column">
+                        <div class="logo logo-footer">
+                            <a href="#">
+                                GirlsGo
+                                <span>Blog</span>
+                            </a>
+                            <span class="slogan">
+                                <span>Yes we can</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="footer-contacts">
+                            <a href="#" class="footer-email">hello@girlsgoit.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    2017 &copy; GirlsGoIT. De parcă all rights reserved. Șî tăt normal.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+</body>
+
+</html>
