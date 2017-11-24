@@ -1,5 +1,5 @@
 # Personal Blog
-This project is to be used during Fass Bootcamp at [GirlsGoIT](https://github.com/girlsgoit).
+This project is to be used during Fall Bootcamp at [GirlsGoIT](https://github.com/girlsgoit).
 
 ### Steps to run the project:
 1. Download or clone the repo.
