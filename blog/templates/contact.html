@@ -1,0 +1,49 @@
+{% extends "partials/base.html" %} 
+
+{% block title %} 
+Contact
+{% endblock title%} 
+
+{% block content %}
+
+<h1 class="page-title">
+    Contact
+</h1>
+
+<!-- Contact -->
+
+<div class="contact">
+    <img src="https://picsum.photos/1500/400?image=618" class="contact-image">
+    <div class="contact-description">
+        <p>
+            Amet minus iure hic, officia ipsa rem, dolores sapiente magni unde, quisquam, perferendis? Perferendis veniam, modi labore,
+            laboriosam debitis nesciunt. Odit eaque facere totam eveniet maxime non temporibus hic accusamus eum omnis assumenda
+            autem, quisquam cum velit fuga enim. Facilis, eligendi nemo.
+        </p>
+        <p>
+            Ab enim, dolorum non, sapiente at voluptas, quibusdam totam molestias fugiat fuga ipsum. Cum ab aspernatur nesciunt velit
+            atque inventore accusamus rem, nam obcaecati adipisci perferendis quo numquam fugiat, esse ad ea quam quisquam
+            odio necessitatibus laborum deleniti laboriosam. Doloremque, repellendus aperiam.
+        </p>
+    </div>
+    <div class="contact-form">
+        <form>
+            <label for="nameField">Name</label>
+            <input type="text" placeholder="Loretta Sutton" id="nameField">
+
+            <label for="mailField">Mail</label>
+            <input type="text" placeholder="name@domain.com" id="mailField">
+
+            <label for="subjectField">Subject</label>
+            <input type="text" id="subjectField">
+
+            <label for="messageField">Message</label>
+            <textarea placeholder="" id="messageField"></textarea>
+            <input class="button-primary" type="submit" value="Send">
+        </form>
+    </div>
+</div>
+
+<!-- End of Contact -->
+
+{% endblock content%}

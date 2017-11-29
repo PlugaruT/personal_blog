@@ -1,66 +1,86 @@
-{% extends "partials/base.html" %}
+{% extends "partials/base.html" %} 
 
-{% block title %}
-	Index
-{% endblock title%}
+{% block title %} 
+	Index 
+{% endblock title%} 
 
 {% block content %}
 
-	    <!-- Hero -->
-		<div class="hero">
-			<a href="#" class="hero-link">
-				<img src="{{ latest_article.image_url }}">
-				<div class="hero-meta">
-					<p class="hero-category">
-						{{ latest_article.category }}
-					</p>
-					<h3 class="hero-title">{{ latest_article.title }}</h3>
-					<p class="hero-date">
-						{{ latest_article.pub_date }}
-					</p>
-				</div>
-			</a>
-		</div>
-		<!-- End of Hero -->
+{% block logo %}
+<div class="logo">
+	<a href="{% url 'index' %}">
+		Blogul Lui
+		<span>Valera</span>
+	</a>
+	<span class="slogan">
+		<span>Valera stie ce e bun</span>
+	</span>
+</div>
+{% endblock logo%}
 
-		<!-- Blog List -->
-		<div class="blog-list">
-			<div class="row">
-				{% for article in last_4_articles %}
-					<div class="column">
-						<div class="article-preview">
-							<img src="{{ article.image_url_preview }}">
-							<p>{{ article.category }}</p>
-							<h4><a href="#">{{ article.title }}</a></h4>
-						</div>
-					</div>
-				{% endfor %}
+
+<!-- Hero -->
+<div class="hero">
+	<a href="{% url 'article_detail' id=latest_article.id %}" class="hero-link">
+		<img src="{{ latest_article.image_url }}">
+		<div class="hero-meta">
+			<p class="hero-category">
+				{{ latest_article.category }}
+			</p>
+			<h3 class="hero-title2">{{ latest_article.title }}</h3>
+			<p class="hero-date">
+				{{ latest_article.pub_date }}
+			</p>
+		</div>
+	</a>
+</div>
+<!-- End of Hero -->
+
+<!-- Blog List -->
+<div class="blog-list">
+	<div class="row">
+		{% for article in latest_articles %}
+		<div class="column">
+			<div class="article-preview">
+				<img src="{{ article.image_url_preview }}">
+				<p>{{ article.category }}</p>
+				<h4>
+					<a href="{% url 'article_detail' id=article.id %}">{{ article.title }}</a>
+				</h4>
 			</div>
 		</div>
-		<!-- End of Blog List -->
+		{% if forloop.counter|divisibleby:4 %}
+	</div>
+	<div class="row">
+		{% endif %} {% endfor %}
+	</div>
+</div>
+<!-- End of Blog List -->
 
-		<!-- About -->
-		
-		<div class="about">
-			<div class="row">
-				<div class="column column-50">
-					<div class="about-image">
-						<img src="https://picsum.photos/600/600?image=786">
-					</div>
-				</div>
-				<div class="column column-50">
-					<div class="about-wrapper">
-						<h4>About me</h4>
-						<p class="about-name">
-							Tudor Plugaru
-						</p>
-						<p class="about-description">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nobis blanditiis iure. Libero reprehenderit quae et consectetur, expedita suscipit eos natus est repellendus ipsa recusandae, incidunt alias eum at sed iste ea! Maiores sint explicabo id, vero libero ab praesentium.
-						</p>
-					</div>
-				</div>
+<!-- About -->
+
+<div class="about">
+	<div class="row">
+		<div class="column column-50">
+			<div class="about-image">
+				<img src="https://picsum.photos/600/600?image=16">
 			</div>
 		</div>
+		<div class="column column-50">
+			<div class="about-wrapper">
+				<h4>About me</h4>
+				<p class="about-name">
+					Tudor Plugaru
+				</p>
+				<p class="about-description">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nobis blanditiis iure. Libero reprehenderit quae et consectetur,
+					expedita suscipit eos natus est repellendus ipsa recusandae, incidunt alias eum at sed iste ea! Maiores sint explicabo
+					id, vero libero ab praesentium.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
 
-		<!-- End of About -->
+<!-- End of About -->
 {% endblock content %}

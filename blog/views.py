@@ -1,20 +1,43 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Article
 
-# Create your views here.
+
 def index(request):
-    # ultimul articol
+    # most recent article
     latest_article = Article.objects.all().order_by('-pub_date').first()
 
-    # cele mai recente 4 articole
-    last_4_articles = Article.objects.all().order_by('-pub_date')[:4]
+    # most recent articles
+    latest_articles = Article.objects.all().order_by('-pub_date')[:8]
 
     data = {
         'latest_article': latest_article,
-        'last_4_articles': last_4_articles
+        'latest_articles': latest_articles
     }
     return render(request, 'index.html', data)
 
 
+def contact(request):
+    return render(request, 'contact.html')
+
+
 def about(request):
     return render(request, 'about.html')
+
+
+def articles(request):
+    articles = Article.objects.all().order_by('-pub_date')
+    data = {
+        'articles': articles
+    }
+    return render(request, 'articles.html', data)
+
+
+def articles_detail(request, id=None):
+    article = get_object_or_404(Article, pk=id)
+    related_articles = Article.objects.filter(category=article.category)[:4]
+    data = {
+        'article': article,
+        'related_articles': related_articles
+    }
+    print(article)
+    return render(request, 'articles-detail.html', data)

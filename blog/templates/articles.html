@@ -1,0 +1,34 @@
+{% extends "partials/base.html" %} 
+
+{% block title %} 
+    Articles
+{% endblock title%} 
+
+{% block content %}
+
+<h1 class="page-title">
+    Articole
+</h1>
+
+<!-- Blog List -->
+<div class="blog-list">
+    <div class="row">
+        {% for article in articles %}
+        <div class="column">
+            <div class="article-preview">
+                <img src="{{ article.image_url_preview }}">
+                <p>{{ article.category }}</p>
+                <h4>
+                    <a href="{% url 'article_detail' id=article.id %}">{{ article.title }}</a>
+                </h4>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row">
+        {% endif %} {% endfor %}
+    </div>
+</div>
+<!-- End of Blog List -->
+
+{% endblock content%}

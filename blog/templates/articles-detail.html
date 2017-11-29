@@ -1,0 +1,41 @@
+{% extends "partials/base.html" %} 
+
+{% block title %} 
+	{{ article.title }}
+{% endblock title%} 
+
+{% block content %}
+    
+<!-- Article -->
+<article class="article">
+    <header class="article-meta">
+        <p class="article-category">{{ article.category }}</p>
+        <h1 class="article-title">{{ article.title }}</h1>
+        <p class="article-date">{{ article.pub_date }}</p>
+    </header>
+    <div class="article-content">
+        <img src="{{ article.image_url }}" class="article-hero">
+        <p>{{ article.content }}</p>
+    </div>
+</article>
+<!-- End of Article -->
+
+<!-- Blog List -->
+<div class="blog-list">
+    <h3 class="blog-list-title">Articole din aceeași categorie</h3>
+    <div class="row">
+        {% for article in related_articles %}
+        <div class="column">
+            <div class="article-preview">
+                <img src="{{ article.image_url_preview }}">
+                <p>{{ article.category }}</p>
+                <h4>
+                    <a href="{% url 'article_detail' id=article.id %}">{{ article.title }}</a>
+                </h4>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- End of Blog List -->
+{% endblock content%}
