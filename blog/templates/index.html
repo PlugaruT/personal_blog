@@ -21,7 +21,7 @@
 
 <!-- Hero -->
 <div class="hero">
-	<a href="{% url 'article_detail' id=latest_article.id %}" class="hero-link">
+	<a href="/articles/{{ latest_article.id }}" class="hero-link">
 		<img src="{{ latest_article.image_url }}">
 		<div class="hero-meta">
 			<p class="hero-category">
@@ -45,7 +45,7 @@
 				<img src="{{ article.image_url_preview }}">
 				<p>{{ article.category }}</p>
 				<h4>
-					<a href="{% url 'article_detail' id=article.id %}">{{ article.title }}</a>
+					<a href="/articles/{{ article.id }}">{{ article.title }}</a>
 				</h4>
 			</div>
 		</div>
