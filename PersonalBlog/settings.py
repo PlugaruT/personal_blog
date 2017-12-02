@@ -25,7 +25,7 @@ SECRET_KEY = 'z_)5dvlq(bb9i2_=i!tdv3uw7ei(ff%=g!$77xw-ei(6@*dsv4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['plugarut.pythonanywhere.com']
+ALLOWED_HOSTS = ['plugarut.pythonanywhere.com', 'localhost']
 
 
 # Application definition

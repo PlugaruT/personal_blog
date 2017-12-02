@@ -32,12 +32,11 @@ def articles(request):
     return render(request, 'articles.html', data)
 
 
-def articles_detail(request, id=None):
+def articles_detail(request, id):
     article = get_object_or_404(Article, pk=id)
     related_articles = Article.objects.filter(category=article.category)[:4]
     data = {
         'article': article,
         'related_articles': related_articles
     }
-    print(article)
     return render(request, 'articles-detail.html', data)
